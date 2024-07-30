@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ ticket.title }}</h1>
+    <p>סטטוס: {{ ticket.get_status_display }}</p>
+    <p>תיאור: {{ ticket.description }}</p>
+    <p>נוצר על ידי: {{ ticket.created_by }}</p>
+    <p>משויך ל: {{ ticket.assigned_to|default:"לא משויך" }}</p>
+
+    <h2>תגובות</h2>
+    {% for comment in ticket.comments.all %}
+        <div>
+            <p>{{ comment.content }}</p>
+            <small>נכתב על ידי {{ comment.user }} ב-{{ comment.created_at }}</small>
+        </div>
+    {% empty %}
+        <p>אין תגובות עדיין.</p>
+    {% endfor %}
+
+    <h3>הוסף תגובה</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">שלח תגובה</button>
+    </form>
+{% endblock %}
