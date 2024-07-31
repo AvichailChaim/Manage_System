@@ -1,0 +1,34 @@
+ticket_system/
+│
+├── manage.py
+├── requirements.txt
+├── .gitignore
+├── README.md
+│
+├── ticket_system/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+│
+├── tickets/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── forms.py
+│   ├── tests.py
+│   └── templates/
+│       └── tickets/
+│           ├── ticket_list.html
+│           ├── ticket_detail.html
+│           └── ticket_form.html
+│
+└── static/
+    ├── css/
+    │   └── main.css
+    └── js/
+        └── main.js

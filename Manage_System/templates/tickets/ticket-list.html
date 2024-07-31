@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>רשימת קריאות</title>
+</head>
+<body>
+    <h1>רשימת קריאות</h1>
+    <ul>
+        {% for ticket in tickets %}
+            <li><a href="{% url 'ticket_detail' pk=ticket.pk %}">{{ ticket.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

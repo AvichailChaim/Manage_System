@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>פרטי קריאה</title>
+</head>
+<body>
+    <h1>{{ ticket.title }}</h1>
+    <p>{{ ticket.description }}</p>
+    <h2>תגובות</h2>
+    <ul>
+        {% for comment in ticket.comments.all %}
+            <li>{{ comment.content }} - {{ comment.user.username }}</li>
+        {% endfor %}
+    </ul>
+    <h2>הוסף תגובה</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">שלח</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>טופס קריאה</title>
+</head>
+<body>
+    <h1>טופס קריאה</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">שמור</button>
+    </form>
+</body>
+</html>
